@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemant kumar yadav(DOM)</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class = "language">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(langname){
+        const li = document.createElement('li');
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptilanguage(langname) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+        
+    }
+    addOptilanguage('golang')
+
+    //   Edit
+
+    const seclang = document.querySelector("li:nth-child(2)")
+    //seclang.innerHTML = "mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "mojo"
+    seclang.replaceWith(newli)
+
+
+    //    Remove    
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove();
+
+
+ </script>
+ </html>
